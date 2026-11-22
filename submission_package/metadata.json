@@ -1,0 +1,35 @@
+{
+  "input": "EuRoC MH_01_easy imu0/data.csv degraded with the organisers' degrade_imu.py (default settings, SEED 42)",
+  "rows_in": 35629,
+  "rows_out": 35629,
+  "one_pose_per_imu_frame": true,
+  "duration_s": 184.095,
+  "runtime_s": 0.576,
+  "runtime_ms_per_imu_second": 3.13,
+  "peak_heap_MB_tracemalloc": 5.966,
+  "threads": 1,
+  "mode": "offline (non-causal smoothing allowed per FAQ)",
+  "cpu": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "forensics": {
+    "column_order": "gyro,accel",
+    "blind_rows": 1002,
+    "duplicate_rows": 48,
+    "gaps": 49,
+    "gap_seconds": 2.8200002559999997,
+    "stuck_rows": 487,
+    "spike_rows": 35
+  },
+  "self_evaluation_vs_public_ground_truth": {
+    "ATE_rmse_m": 4.308,
+    "GT_spread_m": 4.324,
+    "RPE_trans_1s_m": 0.565,
+    "RPE_rot_1s_deg": 5.186,
+    "T1_waypoint_ATE_m": 4.293,
+    "T2_blind5s_ATE_m": 4.842,
+    "T2_blind5s_final_err_m": 5.024,
+    "T3_postgap_ATE_m": 3.859
+  },
+  "note": "Self-evaluation uses the public EuRoC ground truth for MH_01_easy; the official evaluation uses hidden data."
+}
