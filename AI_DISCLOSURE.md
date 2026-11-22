@@ -8,4 +8,6 @@ This project was developed by Hanniel Vinu A (solo - Team HyperNova) with Claude
 
 **Inside the estimator:** no AI model is used. `src/main.py` is plain signal processing in NumPy, with no learned weights and no network calls.
 
+**Demo video:** the voice-over is synthetic speech (Piper TTS).
+
 **Data:** only public datasets (TUM-VI, EuRoC MAV). No hidden evaluation data was used.
