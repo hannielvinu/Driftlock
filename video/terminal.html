@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+body{margin:0;width:1920px;height:1080px;background:radial-gradient(1400px 700px at 70% -10%,#13254d 0%,#070b16 60%);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace}
+.win{width:1560px;height:880px;background:#0b1020;border:1px solid #1f2a48;border-radius:18px;box-shadow:0 40px 120px rgba(0,0,0,.6);overflow:hidden}
+.bar{height:52px;background:#111a33;display:flex;align-items:center;gap:10px;padding:0 20px;color:#8c99b8;font:600 18px Inter,sans-serif}
+.d{width:14px;height:14px;border-radius:50%}.t{margin-left:16px}
+pre{margin:0;padding:28px 36px;font-size:29px;line-height:1.42;color:#e8edf7;white-space:pre-wrap}
+.c{color:#22d3ee}.k{color:#8c99b8}.v{color:#2dd4bf;font-weight:700}.o{color:#fb923c;font-weight:700}.cur{display:inline-block;width:15px;height:30px;background:#22d3ee;vertical-align:-5px;animation:b 1s steps(1) infinite}@keyframes b{50%{opacity:0}}
+</style></head><body><div class="win"><div class="bar"><span class="d" style="background:#f43f5e"></span><span class="d" style="background:#fb923c"></span><span class="d" style="background:#2dd4bf"></span><span class="t">driftlock — bash</span></div><pre id="p"></pre></div>
+<script>
+const LINES=window.LINES||[];const p=document.getElementById('p');let html='';const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function fmt(l){if(l.startsWith('$'))return '<span class="c">'+esc(l)+'</span>';
+ const m=l.match(/^(\s*"?)([\w_]+)("?[=:]\s*)(.*)$/);if(m){const hot=/peak_heap|ms_per|one_pose|ATE_rmse|rmse/.test(m[2]);return esc(m[1])+'<span class="k">'+esc(m[2])+esc(m[3])+'</span><span class="'+(hot?'o':'v')+'">'+esc(m[4])+'</span>'}
+ const r=l.match(/^(\s*)(rmse|mean|max)(\s+)(.*)$/);if(r)return r[1]+'<span class="k">'+r[2]+'</span>'+r[3]+'<span class="'+(r[2]=='rmse'?'o':'v')+'">'+r[4]+'</span>';return esc(l)}
+async function run(){const sl=ms=>new Promise(r=>setTimeout(r,ms));await sl(500);
+ for(const l of LINES){if(l.startsWith('$')){for(let i=1;i<=l.length;i++){p.innerHTML=html+'<span class="c">'+esc(l.slice(0,i))+'</span><span class="cur"></span>';await sl(window.TYPE||28)}await sl(350);html+=fmt(l)+'\n'}else{html+=fmt(l)+'\n';await sl(window.OUT||110)}p.innerHTML=html+'<span class="cur"></span>'}}
+run();
+</script></body></html>
