@@ -1,18 +1,11 @@
 # AI Disclosure
 
-This project was built with help from an AI coding assistant (Anthropic Claude, used through Claude Code).
+This project was developed by Hanniel Vinu A (solo - Team HyperNova) with Claude Code as an AI pair-programmer.
 
-What the AI assistant did:
-- Read the official Track 3 material (slides, FAQ, `degrade_imu.py`) and summarised the constraints.
-- Drafted the estimator (`src/main.py`), the evaluation, benchmark and report tools (`tools/`), the README, the presentation and the demo video.
-- Ran the experiments: degrading public data with the organisers' script, parameter sweeps, memory and runtime profiling, and cross-checking our metrics against the open-source `evo` tool.
+**Team (direction and decisions):** chose Track 3 and the goal of a fully real, measurable solution with no mocks, and set the requirements and quality bar.
 
-What the team did:
-- Chose the track and the approach, reviewed and tested the code, checked every result and claim, and prepared the final submission.
+**Claude (implementation support, under the team's direction):** wrote and debugged the estimator and tools; ran the experiments (degrading public data with the organisers' script, parameter tuning, memory and runtime profiling); checked accuracy against the official `evo` tool.
 
-Generated media: the demo video's voice-over is synthetic speech (Piper, open-source TTS) and its background music was composed in code; every screen and number shown comes from real runs of this code.
+**Inside the estimator:** no AI model is used. `src/main.py` is plain signal processing in NumPy, with no learned weights and no network calls.
 
-What no AI is used for:
-- No AI model runs inside the estimator. `src/main.py` is plain signal processing (complementary filtering, interpolation, FFT filtering) in NumPy. It has no learned weights and makes no network calls.
-
-Data: only public datasets (TUM-VI, EuRoC MAV), degraded with the organisers' `degrade_imu.py`. No hidden evaluation data was used.
+**Data:** only public datasets (TUM-VI, EuRoC MAV). No hidden evaluation data was used.
