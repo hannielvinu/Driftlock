@@ -4,11 +4,13 @@ This project was built with help from an AI coding assistant (Anthropic Claude, 
 
 What the AI assistant did:
 - Read the official Track 3 material (slides, FAQ, `degrade_imu.py`) and summarised the constraints.
-- Drafted the estimator (`src/main.py`), the evaluation, benchmark and report tools (`tools/`), the README and the presentation.
+- Drafted the estimator (`src/main.py`), the evaluation, benchmark and report tools (`tools/`), the README, the presentation and the demo video.
 - Ran the experiments: degrading public data with the organisers' script, parameter sweeps, memory and runtime profiling, and cross-checking our metrics against the open-source `evo` tool.
 
 What the team did:
 - Chose the track and the approach, reviewed and tested the code, checked every result and claim, and prepared the final submission.
+
+Generated media: the demo video's voice-over is synthetic speech (Piper, open-source TTS) and its background music was composed in code; every screen and number shown comes from real runs of this code.
 
 What no AI is used for:
 - No AI model runs inside the estimator. `src/main.py` is plain signal processing (complementary filtering, interpolation, FFT filtering) in NumPy. It has no learned weights and makes no network calls.
