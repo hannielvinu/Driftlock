@@ -1,0 +1,4 @@
+numpy>=1.22
+# optional, only for tools/: plotting and the official evo cross-check
+# matplotlib>=3.5
+# evo>=1.25
