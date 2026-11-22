@@ -6,6 +6,8 @@
 
 **Samsung XR Hackathon 2026 · Track 03: Path Finder (Trajectory Estimation Under Sensor Degradation)**
 
+Team **VITVellore_HyperNova**
+
 Standalone Python estimator: degraded EuRoC IMU CSV → 6-DoF trajectory (TUM format), one pose per IMU row, including the 5-second blind window after the sensor fails.
 
 ![Driftlock mission report: estimated path (cyan) vs hidden ground truth after the IMU has died](docs/img/report_room2_blind.png)
@@ -46,7 +48,7 @@ Plain double integration fails: bias and tilt errors grow quadratically, so on o
 | 5-second post-failure dead reckoning | ✅ | Blind rows detected exactly and extrapolated (§4) |
 | Robust to 2-second dropouts (missing rows) | ✅ | True-time-grid integration + tilt re-levelling (§4) |
 | Unknown gravity alignment | ✅ | Initial attitude from measured gravity; output is aligned by evo (SE(3) Umeyama, FAQ) |
-| Bundle: `estimated_trajectory.txt`, `metadata.json`, `src/main.py`, `src/README.md` | ✅ | [`submission_package/`](submission_package/), or `./make_bundle.sh CollegeName_TeamName` |
+| Bundle: `estimated_trajectory.txt`, `metadata.json`, `src/main.py`, `src/README.md` | ✅ | [`VITVellore_HyperNova.zip`](VITVellore_HyperNova.zip) (same files unpacked in [`submission_package/`](submission_package/)); rebuild with `./make_bundle.sh VITVellore_HyperNova` |
 | Reproducible setup | ✅ | `requirements.txt`, `Dockerfile`, §6–§8 |
 | AI disclosure | ✅ | [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md) |
 
@@ -207,10 +209,11 @@ tools/degrade_imu.py         organisers' degradation script, unchanged, for repr
 tools/plot_results.py        static figures
 results/                     RESULTS.md, benchmark_raw.json, figures/
 docs/                        mission-report samples and screenshots
-submission_package/          Track 3 bundle layout
+VITVellore_HyperNova.zip     Track 3 submission bundle (team_name.zip)
+submission_package/          the same bundle, unpacked
 estimated_trajectory.txt     sample output (EuRoC MH_01_easy, degraded)
 metadata.json                runtime, peak heap, CPU, forensics counts, self-evaluation
 requirements.txt · Dockerfile · make_bundle.sh · AI_DISCLOSURE.md
 ```
 
-**Author:** Hanniel Vinu A ([github.com/hannielvinu](https://github.com/hannielvinu))
+**Team HyperNova** · Vellore Institute of Technology, Vellore · Hanniel Vinu A ([github.com/hannielvinu](https://github.com/hannielvinu))
